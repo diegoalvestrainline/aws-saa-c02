@@ -1,0 +1,32 @@
+# EC2
+- On-demand
+    - Flexible
+    - Short-term
+    - Testing 
+- Reserved
+    - Predictable usage
+    - Specific capacity requirement
+    - Pay up front
+    - Standard RIs - Up to 72% off
+    - Convertible RIs - Up to 52% off
+    - Shceduled RIs
+- Spot
+    - Purchase unused capacity - Up to 90% off
+    - Flexible requirements
+- Dedicated
+    - Compliance
+    - Licensing
+---
+Command lines
+- User needs programatic access
+- Secret access keys
+---
+Using roles
+- Similar to a user, it is an identity which can have permissions and policies that determine what the identity can and cannot do in AWS
+- Can be assumable by anyone who needs access
+- Temporary
+- Assumable by people, AWS architecture or other system-level accounts
+- Preferred Option from a security perspective
+- Avoid hard-coding the credentials
+- Has policies that control permissions
+- Attach and detach roles anytime
