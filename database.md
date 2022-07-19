@@ -1,0 +1,50 @@
+# Database
+- RDS
+    - RDS is used for OLTP - Transaction processing. User Redshift for OLAP
+    - Type - PostgreSQL, MySQL, Aurora, MariaDB, Oracle, SQLSerever
+    - Multi AZ - Disaster recovery 
+    - Read Replica - used or Read performance enhancement
+    - Can be multiregion 
+    - Need to enable the backups for readreplica
+    - Read replica can be Multi AZ 
+- Aurora
+    - Starts with 10 GB , Scales in 10 TB upto 128 TB 
+    - Compute : 96 vCPU 768 GB memory 
+    - Data is available in Min 3 AZ – 2 Copies of data in each AZ – In total 6 Copies of your data is always available.
+    - Copies Loss 
+        - Can handle loss of 2 copies and no effect on Write availability
+        - Can handle loss of 3 copies and no effect on read Availability
+    - Can support 15 read replica
+    - Automated failover is only available with Aurora Replica 
+    - Aurora Backup – always enabled 
+- Aurora Serverless
+
+- DynamoDB
+    - Stored on SSD 
+    - Single Digit Millisecond latency at any scale 
+    - Spread across 2 geo location 
+    
+    - DynamoDB DAX
+        - In memory caching solution 
+        - Devs can connect to DAX instead of DB. And DAX will handle the Cache Miss Cache Hit situations. 
+        - Request time is reduced from Millisecond to Mircoseconds. 
+    - DynamoDB Transaction
+        - Write all or do not write anything.  
+        - ACID
+            - Atomic - All changes shall be performed or Nothing
+            - Consistent – Data must be in consistent state before and after the transaction 
+            - Isolated – No other process can make changes to the data 
+            - Durable – Changes made by the transaction must be persistent. 
+        - You can use DynamoDB Transactions for ACID in DynamoDB 
+    - DynamoDB Backup 
+        - Full backup at any time without any impact on the Table performance
+        - Consistent within Seconds and retained until deleted. 
+        - You can go back for 35 days of data point. 
+        - RPO - Recovery Point Objective - 5 Mins. Means when you do the restore, you loose last 5 mins of data. 
+    - DynamoDB stream and DynamoDB Global Table 
+        - Global Table : Replica of DynamoDB in multiple regions. Multiple Master Multi Region. 
+        - You need to enable the dynamoDB streams. 
+        - Replication latency : 1 Second
+    - DynamoDB Streams 
+        - Time Ordered sequence  if item level changes in the table.   
+        - Whenever you make changes to the DynamoDB Table I.E Insert, Update delete, the data is saved in the Streams and the data is divided in  shards. 
